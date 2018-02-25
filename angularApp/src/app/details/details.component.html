@@ -1,0 +1,16 @@
+<div style="text-align:center">
+	<h3>Details about {{thePet.name}}</h3>
+	<p><a href [routerLink] = "['../../show']">Home</a></p>
+
+	<p>Pet type: {{thePet.type}}</p>
+	<p>Description: {{thePet.desc}}</p>
+	<p>Skills: {{thePet.skill1}}<span *ngIf="thePet.skill2">, {{thePet.skill2}}</span><span *ngIf="thePet.skill3">, {{thePet.skill3}}</span>
+	<p>Likes: {{thePet.likes}}</p>
+
+	<p>
+		<!-- <button (click) = "onLikeButtonClick(thePet._id)" [(ngModel)]="thePet.likes">Like this pet</button> -->
+		<button (click) = "onLikeButtonClick(thePet._id)">Like this pet</button>
+		<button (click) = "onDeleteButtonClick(thePet._id)">Adopt this pet!</button>
+	</p>
+
+</div>

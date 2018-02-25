@@ -1,0 +1,25 @@
+<div style="text-align:center">
+	<h3>These pets are looking for a home!</h3>
+	<p><a href [routerLink] = "['../new']">Add a pet to the shelter</a></p>
+	<table>
+			<tr>
+				<td>Name</td>
+				<td>Type</td>
+				<td>Actions</td>
+			</tr>
+			<tr>
+			<tr *ngFor='let pet of pets'>
+				<!-- <td>{{ author.name }}</td> -->
+				<td>{{ pet.name }}</td>
+				<td>{{ pet.type }}</td>
+				<td>
+					<button [routerLink]="['../details', pet._id]">Details</button>
+					<button [routerLink]="['../edit', pet._id]" (click)="saveIDtoService(pet._id)">Edit</button>
+					<!-- <button [routerLink]="['../quotes', author._id]">View quotes</button> -->
+					<!-- <button [routerLink]="['../edit', author._id]" (click)="saveIDtoService(author._id)">Edit</button>  -->
+					<!-- <button (click) = "onDeleteButtonClick(author._id)">Delete</button> -->
+				</td>
+				<router-outlet></router-outlet> 
+			</tr>
+	</table>
+</div>

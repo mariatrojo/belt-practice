@@ -1,0 +1,28 @@
+<div style="text-align:center">
+	<h3>Edit this pet</h3>
+
+			<p>Pet name:</p>
+			<input type="text" name="thePet.name" [(ngModel)]="thePet.name" />
+	
+			<p>Pet type:</p>
+			<input type="text" name= "thePet.type" [(ngModel)]="thePet.type" />
+	
+			<p>Description:</p>
+			<input type="text" name= "thePet.desc" [(ngModel)]="thePet.desc" />
+	
+			<p>Skills:</p>
+			<p>
+				Skill 1: <input type="text" name= "thePet.skill1" [(ngModel)]="thePet.skill1" />
+			</p>
+			<p>
+				Skill 2: <input type="text" name= "thePet.skill2" [(ngModel)]="thePet.skill2" />
+			</p>
+			<p>
+				Skill 3: <input type="text" name= "thePet.skill3" [(ngModel)]="thePet.skill3" />
+			</p>
+			<p>
+					<button type="button" value="Submit" (click)="onEditSubmit()">Edit pet</button>
+				<button [routerLink] = "['../../show']">Cancel</button>
+			</p>
+			
+</div>

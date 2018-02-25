@@ -1,0 +1,64 @@
+<!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/X.Y.Z/angular-messages.js"></script> -->
+
+<div style="text-align:center">
+	<h3>Know of a pet needing a home?</h3>
+
+
+	<form (submit)="onSubmit()" name="myForm">
+
+		<p>Pet name:</p>
+		<input 
+		type="text" 
+		name="name" 
+		[(ngModel)]="newPet.name" 
+		required
+		minlength="3"
+		#name="ngModel"
+		/>
+		<div class="validations" *ngIf="!name.valid">There is an error with the name</div>
+
+		<p>Pet type:</p>
+		<input 
+		type="text" 
+		name= "type" 
+		[(ngModel)]="newPet.type"
+		required
+		minlength="3"
+		#type="ngModel"
+		/>
+		<div class="validations" *ngIf="!type.valid">There is an error with the type</div>
+
+		<p>Description:</p>
+		<input 
+		type="text" 
+		name= "desc" 
+		[(ngModel)]="newPet.desc"
+		required
+		minlength="3"
+		#desc="ngModel" 
+		/>
+		<div class="validations" *ngIf="!desc.valid">There is an error with the description</div>
+
+		<p>Skills:</p>
+		<p>
+			Skill 1: <input type="text" name= "newPet.skill1" [(ngModel)]="newPet.skill1" />
+		</p>
+		<p>
+			Skill 2: <input type="text" name= "newPet.skill2" [(ngModel)]="newPet.skill2" />
+		</p>
+		<p>
+			Skill 3: <input type="text" name= "newPet.skill3" [(ngModel)]="newPet.skill3" />
+		</p>
+		<p>
+			<input type="submit" value="Add pet"/>
+			<button [routerLink] = "['../show']">Cancel</button>
+		</p>
+
+	</form>
+
+	<!-- {{ name.errors | json }}
+	{{ name.valid | json }} -->
+	
+
+
+</div>
